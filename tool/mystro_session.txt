@@ -1,0 +1,534 @@
+{
+    "_id": "59402fa599d01cce3c94d754",
+    "region_name": "CTEC-Int-NDC1",
+    "sh_random_part": "d0e",
+    "sh_session_id": "0021be8dd9f3405f7e0d",
+    "routing": [
+        {
+            "version": "1.0.0",
+            "routing_key": "NETWORK_ADAPTER",
+            "status": {
+                "host": "ctec-int-mdms01-ndc1-fsmavnapi01/172.30.121.152",
+                "start_time_ms": 1497378725200,
+                "completion_time_ms": 1497378725207,
+                "execution_time_ms": 7,
+                "routing_state": "COMPLETE",
+                "database_time_ms": 2,
+                "database_details": [
+                    {
+                        "time_usec": 1173,
+                        "cmd": "find",
+                        "coll": "headend_servicegroup_mappings",
+                        "sel": "[{<<\"service_group_identifier\">>,10000}]"
+                    },
+                    {
+                        "time_usec": 1045,
+                        "cmd": "insert_sync",
+                        "coll": "na_sessions",
+                        "sel": null
+                    }
+                ],
+                "other_times": {
+                    "validate_request": 0,
+                    "parse_headers": 0,
+                    "parse_body": 0,
+                    "compute_values": 3,
+                    "session_synchronize": 0
+                }
+            }
+        },
+        {
+            "version": "1.0.0",
+            "routing_key": "ROUTING_CONTROLLER",
+            "status": {
+                "host": "ctec-int-mdms01-ndc1-proxyproc01/172.30.121.156",
+                "start_time_ms": 1497378725209,
+                "completion_time_ms": 1497378725210,
+                "execution_time_ms": 1,
+                "routing_state": "COMPLETE",
+                "database_time_ms": 0,
+                "database_details": null,
+                "other_times": {
+                    "decode_session_doc": 0
+                }
+            }
+        },
+        {
+            "version": 2,
+            "routing_key": "SITE",
+            "status": {
+                "routing": "SITE",
+                "action": null,
+                "start_time_ms": 1497378725376,
+                "completion_time_ms": 1497378725387,
+                "execution_time_ms": 11,
+                "routing_state": "COMPLETE",
+                "host": "ctec-int-mdms01-ndc1-proxyadapter01/172.16.146.132",
+                "instance_id": null
+            }
+        },
+        {
+            "version": 2,
+            "routing_key": "ASSET_IDENTIFIER",
+            "status": {
+                "routing": "ASSET_IDENTIFIER",
+                "action": null,
+                "start_time_ms": 1497378725404,
+                "completion_time_ms": 1497378725474,
+                "execution_time_ms": 70,
+                "routing_state": "COMPLETE",
+                "host": "ctec-int-mdms01-ndc1-proxyadapter01/172.16.146.132",
+                "instance_id": null
+            }
+        },
+        {
+            "version": 1,
+            "routing_key": "SSP_ADAPTER_SETUP",
+            "status": {
+                "host": "ctec-int-mdms01-ndc1-fsmavnapi01/172.30.121.152",
+                "start_time_ms": 1497378725477,
+                "completion_time_ms": 1497378725549,
+                "execution_time_ms": 72,
+                "routing_state": "FAILED",
+                "database_time_ms": 1,
+                "database_details": [
+                    {
+                        "time_usec": 1143,
+                        "cmd": "insert_sync",
+                        "coll": "ssp_adapter_saved_data",
+                        "sel": null
+                    }
+                ],
+                "other_times": {
+                    "decode_session_doc": 1,
+                    "{ssp_connection,{headend_conn_info,<<\"Mystro\">>,<<\"udp\">>,<<\"10.253.8.3\">>,13819,13819},with_response}": 68
+                }
+            }
+        },
+        {
+            "version": 1,
+            "routing_key": "DSMCC_NA_RESPONSE_58dea8d2babc8935be13695a",
+            "status": {
+                "host": "ctec-int-mdms01-ndc1-fsmavnapi01/172.30.121.152",
+                "start_time_ms": 1497378725552,
+                "completion_time_ms": 1497378725559,
+                "execution_time_ms": 7,
+                "routing_state": "COMPLETE",
+                "database_time_ms": 3,
+                "database_details": [
+                    {
+                        "time_usec": 1430,
+                        "cmd": "find_and_modify",
+                        "coll": "na_sessions",
+                        "sel": "[{<<\"region_name\">>,<<\"CTEC-Int-NDC1\">>},{<<\"sh_random_part\">>,<<\"d0e\">>},{<<\"sh_session_id\">>,<<\"0021be8dd9f3405f7e0d\">>}]"
+                    },
+                    {
+                        "time_usec": 1735,
+                        "cmd": "delete_sync",
+                        "coll": "na_sessions",
+                        "sel": "[{<<\"region_name\">>,<<\"CTEC-Int-NDC1\">>},{<<\"sh_random_part\">>,<<\"d0e\">>},{<<\"sh_session_id\">>,<<\"0021be8dd9f3405f7e0d\">>}]"
+                    }
+                ],
+                "other_times": {
+                    "decode_session_doc": 2,
+                    "session_synchronize": 0,
+                    "encode_session_doc": 0
+                }
+            }
+        },
+        {
+            "version": 1,
+            "routing_key": "POSTPROCESSING"
+        }
+    ],
+    "network_return_response": "true",
+    "component_data": {
+        "NETWORK_ADAPTER": {
+            "action": "SETUP",
+            "adaptation_header": "",
+            "allocation_expiration_time": 1497465125200,
+            "catId": "175850",
+            "client_request_message": "1102401049c6250bff0000b40021be8dd9f3405f7e0d00002d0000000000000000000000000021be8dd9f3002d00000000000000000afd0803000000000000000000007c0100020206000000000000056f63617449643d3137353835303b64656c697665727949643d53544c4f2d68626f2e636f6d2d48585354303030303030303030313037323334302d313439353835373630303030303b73657276696365417265613d31303030303b766964656f4465636f6465547970653d303030313b",
+            "client_type": "AVN",
+            "comm_protocol": "UDP",
+            "create_time_ms": 1497378725200,
+            "delivery_id": "STLO-hbo.com-HXST0000000001072340-1495857600000",
+            "dialect": "SSP 1.0",
+            "headend_name": "STLO",
+            "ip_address": "172.17.226.94",
+            "lscp_ip_address": "",
+            "lscp_port": 0,
+            "mac_address": "0021be8dd9f3",
+            "network_proxy_id": "58dea8d2babc8935be13695a",
+            "plant_id": 0,
+            "port": 52105,
+            "private_data": "0100020206000000000000056f63617449643d3137353835303b64656c697665727949643d53544c4f2d68626f2e636f6d2d48585354303030303030303030313037323334302d313439353835373630303030303b73657276696365417265613d31303030303b766964656f4465636f6465547970653d303030313b",
+            "protocol": "DSMCC",
+            "protocol_version_major": 1,
+            "protocol_version_minor": 0,
+            "provider_id": "hbo.com",
+            "region_name": "CTEC-Int-NDC1",
+            "request_method": "SETUP",
+            "return_queue_routing": "DSMCC_NA_RESPONSE_58dea8d2babc8935be13695a",
+            "scf_host": "10.253.8.3",
+            "scf_port": 13822,
+            "service_group": 10000,
+            "service_type": "DSMCC_PROXY",
+            "session_id": "0021be8dd9f3405f7e0d",
+            "start_time": "1495857600000",
+            "time_to_live_in_ms": 10000,
+            "title_asset_alt_id": "HXST0000000001072340",
+            "user_agent": "STB",
+            "videoDecodeType": "0001"
+        },
+        "ROUTING_CONTROLLER": {
+            "version": "0",
+            "description": "Steps for Charter DSMCC_PROXY setup routing"
+        },
+        "SITE_INFORMATION": {
+            "headend_id": "STLO",
+            "type": "Mystro",
+            "backend": "DNCS",
+            "status": "online",
+            "ssp_ip_address": "10.253.8.3",
+            "ssp_port": 13819,
+            "lscp_ip_address": "172.30.83.137",
+            "lscp_port": 10101,
+            "use_scp": "true",
+            "timezone_id": "US/Central",
+            "offering_flag": "00",
+            "playlist_port": 443,
+            "service_gateway_name": "BMSsvcgateway",
+            "mp2_4_bitmask": "0000",
+            "mso": "TWC",
+            "playlist_ip": "pi-dev.timewarnercable.com",
+            "session_gateway": "10.254.113.223"
+        },
+        "ASSET": {
+            "advisories": [
+                "AC"
+            ],
+            "studio": null,
+            "durationInSeconds": "5711",
+            "packageAssetID": "HXSD0000000001072340",
+            "hdcontent": "false",
+            "year": "2017",
+            "audioType": "DOLBY_5_1",
+            "directors": [
+                "Ariel Rotter"
+            ],
+            "rating": "TV-14",
+            "description": "A woman struggles to put her life back together after the sudden death of her husband. Ends 06/25",
+            "title": "La Luz Incidente",
+            "previewPeriod": null,
+            "adultContent": "false",
+            "adiCategories": [
+                "HBO/HBO Movies/All Movies"
+            ],
+            "provider": "HBO",
+            "genres": {
+                "genre": [
+                    "People",
+                    "Movies",
+                    "Drama",
+                    "OnDemand"
+                ]
+            },
+            "smartTvCategories": [],
+            "tms": {
+                "value": "",
+                "tmsRootId": null,
+                "tmsEpisodeTitle": null,
+                "tmsTitle": "La luz incidente",
+                "titleAssetId": "HXST0000000001072340",
+                "packageAssetId": "HXSD0000000001072340",
+                "adiSource": "PV",
+                "status": "MAPPED",
+                "seriesId": null,
+                "tmsId": "MV008784880000"
+            },
+            "offerings": {
+                "offering": [
+                    {
+                        "video": {
+                            "stream": {
+                                "value": "",
+                                "videoTypeText": "MPEG-2",
+                                "videoType": "1"
+                            },
+                            "contentType": "movie",
+                            "type": "qam"
+                        },
+                        "trickModes": "",
+                        "trickModesValue": "0",
+                        "trickModeSource": "OFFERING",
+                        "hasPreview": "false",
+                        "cancellationWindowInMinutes": "0",
+                        "lastModified": "1494724138000",
+                        "creationTime": "1494168197000",
+                        "offeringCat": "HBO/HBO Movies/All Movies",
+                        "wholeHome": "false",
+                        "isDisplayAsLastChance": "false",
+                        "rentalWindowInHours": "24",
+                        "displayAsNew": "false",
+                        "order": "39",
+                        "mystroServiceLongName": "HBO On Demand",
+                        "mystroServiceName": "HBO on Demand",
+                        "mystroServiceId": "461",
+                        "licenseWindowEnd": "1498449599000",
+                        "licenseWindowStart": "1495857600000",
+                        "priceSource": "OFFERING",
+                        "price": "0.00",
+                        "provider": "HBO",
+                        "product": "HOD",
+                        "type": "STB",
+                        "divCode": "STI",
+                        "entitlementIds": "7,9,331",
+                        "assetAvailability": "IH",
+                        "id": "190968921",
+                        "offeringSmartTvCat": null
+                    },
+                    {
+                        "video": {
+                            "stream": {
+                                "value": "",
+                                "videoTypeText": "MPEG-2",
+                                "videoType": "1"
+                            },
+                            "contentType": "movie",
+                            "type": "qam"
+                        },
+                        "trickModes": "",
+                        "trickModesValue": "0",
+                        "trickModeSource": "OFFERING",
+                        "hasPreview": "false",
+                        "cancellationWindowInMinutes": "0",
+                        "lastModified": "1494728422000",
+                        "creationTime": "1494168203000",
+                        "offeringCat": "HBO/HBO Movies/All Movies",
+                        "wholeHome": "false",
+                        "isDisplayAsLastChance": "false",
+                        "rentalWindowInHours": "24",
+                        "displayAsNew": "false",
+                        "order": "39",
+                        "mystroServiceLongName": "HBO On Demand",
+                        "mystroServiceName": "HOD",
+                        "mystroServiceId": "1897",
+                        "licenseWindowEnd": "1498449599000",
+                        "licenseWindowStart": "1495857600000",
+                        "priceSource": "OFFERING",
+                        "price": "0.00",
+                        "provider": "HBO",
+                        "product": "HOD",
+                        "type": "STB",
+                        "divCode": "SYR",
+                        "entitlementIds": "118,302,303,510",
+                        "assetAvailability": "IH",
+                        "id": "1768201",
+                        "offeringSmartTvCat": null
+                    },
+                    {
+                        "video": {
+                            "stream": {
+                                "value": "",
+                                "videoTypeText": "MPEG-2",
+                                "videoType": "1"
+                            },
+                            "contentType": "movie",
+                            "type": "qam"
+                        },
+                        "trickModes": "",
+                        "trickModesValue": "0",
+                        "trickModeSource": "OFFERING",
+                        "hasPreview": "false",
+                        "cancellationWindowInMinutes": "0",
+                        "lastModified": "1494727142000",
+                        "creationTime": "1494168169000",
+                        "offeringCat": "HBO/HBO Movies/All Movies",
+                        "wholeHome": "false",
+                        "isDisplayAsLastChance": "false",
+                        "rentalWindowInHours": "24",
+                        "displayAsNew": "false",
+                        "order": "39",
+                        "mystroServiceLongName": "HBO On Demand",
+                        "mystroServiceName": "HBO On Demand",
+                        "mystroServiceId": "388",
+                        "licenseWindowEnd": "1498449599000",
+                        "licenseWindowStart": "1495857600000",
+                        "priceSource": "OFFERING",
+                        "price": "0.00",
+                        "provider": "HBO",
+                        "product": "HOD",
+                        "type": "STB",
+                        "divCode": "CLT",
+                        "entitlementIds": "13,65,87",
+                        "assetAvailability": "IH",
+                        "id": "1386411",
+                        "offeringSmartTvCat": null
+                    },
+                    {
+                        "video": {
+                            "stream": {
+                                "value": "",
+                                "videoTypeText": "MPEG-2",
+                                "videoType": "1"
+                            },
+                            "contentType": "movie",
+                            "type": "qam"
+                        },
+                        "trickModes": "",
+                        "trickModesValue": "0",
+                        "trickModeSource": "OFFERING",
+                        "hasPreview": "false",
+                        "cancellationWindowInMinutes": "0",
+                        "lastModified": "1494726214000",
+                        "creationTime": "1494168166000",
+                        "offeringCat": "HBO/HBO Movies/All Movies",
+                        "wholeHome": "false",
+                        "isDisplayAsLastChance": "false",
+                        "rentalWindowInHours": "24",
+                        "displayAsNew": "false",
+                        "order": "39",
+                        "mystroServiceLongName": "HBO On Demand",
+                        "mystroServiceName": "HBOOD",
+                        "mystroServiceId": "2445",
+                        "licenseWindowEnd": "1498449599000",
+                        "licenseWindowStart": "1495857600000",
+                        "priceSource": "OFFERING",
+                        "price": "0.00",
+                        "provider": "HBO",
+                        "product": "HOD",
+                        "type": "STB",
+                        "divCode": "TPB",
+                        "entitlementIds": "8,102,110",
+                        "assetAvailability": "IH",
+                        "id": "198859306",
+                        "offeringSmartTvCat": null
+                    },
+                    {
+                        "video": {
+                            "stream": {
+                                "value": "",
+                                "videoTypeText": "MPEG-2",
+                                "videoType": "1"
+                            },
+                            "contentType": "movie",
+                            "type": "qam"
+                        },
+                        "trickModes": "",
+                        "trickModesValue": "0",
+                        "trickModeSource": "OFFERING",
+                        "hasPreview": "false",
+                        "cancellationWindowInMinutes": "0",
+                        "lastModified": "1494726247000",
+                        "creationTime": "1494168220000",
+                        "offeringCat": "HBO/HBO Movies/All Movies",
+                        "wholeHome": "false",
+                        "isDisplayAsLastChance": "false",
+                        "rentalWindowInHours": "24",
+                        "displayAsNew": "false",
+                        "order": "39",
+                        "mystroServiceLongName": "HBO On Demand",
+                        "mystroServiceName": "HBOOD",
+                        "mystroServiceId": "3214",
+                        "licenseWindowEnd": "1498449599000",
+                        "licenseWindowStart": "1495857600000",
+                        "priceSource": "OFFERING",
+                        "price": "0.00",
+                        "provider": "HBO",
+                        "product": "HOD",
+                        "type": "STB",
+                        "divCode": "TPF",
+                        "entitlementIds": "22,24,122",
+                        "assetAvailability": "IH",
+                        "id": "200167494",
+                        "offeringSmartTvCat": null
+                    },
+                    {
+                        "video": {
+                            "stream": {
+                                "value": "",
+                                "videoTypeText": "MPEG-2",
+                                "videoType": "1"
+                            },
+                            "contentType": "movie",
+                            "type": "qam"
+                        },
+                        "trickModes": "",
+                        "trickModesValue": "0",
+                        "trickModeSource": "OFFERING",
+                        "hasPreview": "false",
+                        "cancellationWindowInMinutes": "0",
+                        "lastModified": "1494724562000",
+                        "creationTime": "1494168172000",
+                        "offeringCat": "HBO/HBO Movies/All Movies",
+                        "wholeHome": "false",
+                        "isDisplayAsLastChance": "false",
+                        "rentalWindowInHours": "24",
+                        "displayAsNew": "false",
+                        "order": "39",
+                        "mystroServiceLongName": "HBO On Demand",
+                        "mystroServiceName": "HBO_On_Demand",
+                        "mystroServiceId": "495",
+                        "licenseWindowEnd": "1498449599000",
+                        "licenseWindowStart": "1495857600000",
+                        "priceSource": "OFFERING",
+                        "price": "0.00",
+                        "provider": "HBO",
+                        "product": "HOD",
+                        "type": "STB",
+                        "divCode": "SMN",
+                        "entitlementIds": "7,125,212",
+                        "assetAvailability": "IH",
+                        "id": "1617007",
+                        "offeringSmartTvCat": null
+                    }
+                ]
+            },
+            "displayLastChance": "7",
+            "dispAsNew": "7",
+            "titleAssetID": "HXST0000000001072340",
+            "vodContentType": "SUBSCRIPTION_VOD",
+            "billingCode": "0",
+            "actors": [
+                "Lupe Cura",
+                "Erica Rivas",
+                "Marcelo Subiotto",
+                "Susana Pampin",
+                "Greta Cura"
+            ],
+            "providerID": "hbo.com",
+            "closedCaption": "false",
+            "adiTrickModesRestricted": null,
+            "name": "hbo.com::HXSM0000000001072340",
+            "boxOffice": null,
+            "movieAssetID": "HXSM0000000001072340"
+        },
+        "SSP_ADAPTER_SETUP": {
+            "status": "EXTERNAL_CONNECTION_ERROR",
+            "message": "Headend replied with an error: 32",
+            "client_response_message": "1102401149c6250bff0000cc0021be8dd9f3405f7e0d00202d00000000000000000000000000000000000000000400000003c001c000430400100005000100000001ffffffff00000001ffff00000006c002c0004304000c000200010000000000010000000000000004c003c00043040008000200010000000001000000f001c004c0004304000c0008000f0010004c4b40000000000000003e0201424d53737663676174657761790000000000002848424f206f6e2044656d616e640000000000001403c4020001b105000b61f4590206000000002710"
+        },
+        "DSMCC_NA_RESPONSE_58dea8d2babc8935be13695a": {
+            "client_response_message": "1102401149c6250bff0000cc0021be8dd9f3405f7e0d00202d00000000000000000000000000000000000000000400000003c001c000430400100005000100000001ffffffff00000001ffff00000006c002c0004304000c000200010000000000010000000000000004c003c00043040008000200010000000001000000f001c004c0004304000c0008000f0010004c4b40000000000000003e0201424d53737663676174657761790000000000002848424f206f6e2044656d616e640000000000001403c4020001b105000b61f4590206000000002710"
+        }
+    },
+    "completion_code": "EXTERNAL_CONNECTION_ERROR",
+    "session_state": "COMPLETE",
+    "version": "2.7.011 / 1.0.0_3.3.0-1.02",
+    "error_message": "Headend replied with an error: 32",
+    "statistics": {
+        "response_time_ms": 359,
+        "response_time_iso": "2017-06-13T18:32:05Z",
+        "response_time_iso_str": "2017-06-13T18:32:05Z",
+        "end_time_iso": "2017-06-13T18:32:05Z",
+        "end_time_iso_str": "2017-06-13T18:32:05Z",
+        "messaging_time_ms": 191,
+        "execution_time_ms": 168,
+        "database_time_ms": 6,
+        "other_times": 74,
+        "total_time_ms": 364,
+        "create_time_iso": "2017-06-13T18:32:05Z",
+        "create_time_iso_str": "2017-06-13T18:32:05Z"
+    }
+}

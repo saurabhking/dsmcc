@@ -1,0 +1,36 @@
+2017-06-13 20:25:44,491 INFO  [main] SetupBuilder.emitRuby(): Generated   SETUP Ruby Script: /tmp/dsmcc_setup_1497385544491.rb
+2017-06-13 20:25:44,491 INFO  [main] SetupBuilder.emitRuby(): Generated RELEASE Ruby Script: /tmp/dsmcc_release_1497385544491.rb
+2017-06-13 20:31:17,109 INFO  [main] Main.lambda$new$0(): mode --> setup
+2017-06-13 20:31:17,111 INFO  [main] Main.lambda$new$0(): processingip --> 172.30.121.152
+2017-06-13 20:31:17,111 INFO  [main] Main.lambda$new$0(): catId --> 175850
+2017-06-13 20:31:17,113 INFO  [main] Main.lambda$new$0(): deliveryId --> STLO-indemand.com-INTL1113000006858612-1384491600000
+2017-06-13 20:31:17,113 INFO  [main] Main.lambda$new$0(): stbaddr --> 44:e0:8e:b9:78:17
+2017-06-13 20:31:17,113 INFO  [main] Main.lambda$new$0(): serviceArea --> 10000
+2017-06-13 20:31:17,113 INFO  [main] Main.lambda$new$0(): serverip --> 10.253.8.3
+2017-06-13 20:31:17,113 INFO  [main] Main.lambda$new$0(): videoDecodeType --> 0001
+2017-06-13 20:31:17,119 INFO  [main] Main.getSessionNumber(): The Session Number will be: 1080000018
+2017-06-13 20:31:17,125 INFO  [main] SetupBuilder.lambda$setOptionalAppData$1(): Extra AppReqData: catId --> 175850
+2017-06-13 20:31:17,125 INFO  [main] SetupBuilder.lambda$setOptionalAppData$1(): Extra AppReqData: deliveryId --> STLO-indemand.com-INTL1113000006858612-1384491600000
+2017-06-13 20:31:17,125 INFO  [main] SetupBuilder.lambda$setOptionalAppData$1(): Extra AppReqData: serviceArea --> 10000
+2017-06-13 20:31:17,125 INFO  [main] SetupBuilder.lambda$setOptionalAppData$1(): Extra AppReqData: videoDecodeType --> 0001
+2017-06-13 20:31:17,133 INFO  [main] SetupBuilder.emitRuby(): REQUEST:
+
+
+HEADER:
+        11-02-40-10-49-c6-25-0b-ff-00-00-b9
+SESSION:
+        44-e0-8e-b9-78-17-40-5f-7e-12
+RESERVED:
+        00-00
+CLIENT-NSAP:
+        2d-00-00-00-00-00-00-00-00-00-00-00-00-44-e0-8e-b9-78-17-00
+SERVER-NSAP:
+        2d-00-00-00-00-00-00-00-00-0a-fd-08-03-00-00-00-00-00-00-00
+USERDATA:
+        00-00-00-81-01-00-02-02-06-00-00-00-00-00-00-05-74-63-61-74-49-64-3d-31-37-35-38-35-30-3b-64-65-6c-69-76-65-72-79-49-64-3d-53-54-4c-4f-2d-69-6e-64-65-6d-61-6e-64-2e-63-6f-6d-2d-49-4e-54-4c-31-31-31-33-30-30-30-30-30-36-38-35-38-36-31-32-2d-31-33-38-34-34-39-31-36-30-30-30-30-30-3b-73-65-72-76-69-63-65-41-72-65-61-3d-31-30-30-30-30-3b-76-69-64-65-6f-44-65-63-6f-64-65-54-79-70-65-3d-30-30-30-31-3b
+        APP-REQUEST-DATA:
+                catId=175850;deliveryId=STLO-indemand.com-INTL1113000006858612-1384491600000;serviceArea=10000;videoDecodeType=0001;
+
+
+2017-06-13 20:31:17,143 INFO  [main] SetupBuilder.emitRuby(): Generated   SETUP Ruby Script: /tmp/dsmcc_setup_1497385877143.rb
+2017-06-13 20:31:17,144 INFO  [main] SetupBuilder.emitRuby(): Generated RELEASE Ruby Script: /tmp/dsmcc_release_1497385877143.rb

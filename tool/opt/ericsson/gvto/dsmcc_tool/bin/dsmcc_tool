@@ -1,0 +1,31 @@
+#!/bin/bash
+
+export JAVA_HOME=/usr/java/default
+
+USER=monaco
+NAME=dsmcc_tool
+DESC="DSCMCC Tool"
+VERSION=1.0.011
+STDOUTLOG=/var/log/monaco/dsmcc_tool.start.log
+APP_HOME="/opt/ericsson/gvto/dsmcc_tool"
+CLASSNAME=com.ericsson.dsmcc.tool.Main
+JAVA_MEM="-Xms128m -Xmx4096m";
+JAVA_SEC="-Djava.security.manager -Djava.security.policy=${APP_HOME}/etc/client.policy";
+LOG_CONF="-Dlog4j.configuration=file://${APP_HOME}/etc/log4j.xml";
+
+#echo -e "\n\n\n\n$(date) start, version: $VERSION" >> $STDOUTLOG;
+echo "Starting $DESC, v$VERSION: ";
+
+for f in $APP_HOME/lib/*; do CP=$CP:$f; done
+
+START_PARAMS="$LOG_CONF $JAVA_SEC $JAVA_MEM";
+STARTUP="$JAVA_HOME/bin/java -cp $CP $START_PARAMS $CLASSNAME";
+
+echo -e "COMMAND:\n $STARTUP $@\n\n" >> $STDOUTLOG;
+#$STARTUP >> $STDOUTLOG 2>&1 &
+
+$STARTUP $@
+
+echo "Done.";
+
+exit 0
